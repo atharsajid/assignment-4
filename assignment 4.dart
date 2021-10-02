@@ -82,3 +82,78 @@ class Name {
     print("My name is $name");
   }
 }
+
+//Question no 7
+void main(List<String> args) {
+  
+  Construct obj = Construct(name:"Athar", age: 24, education: "B.Com" );
+  obj.myprofile();
+
+}
+
+ class Construct {
+   String name;
+   int age;
+   String education;
+
+   Construct({required this.name, required this.age, required this.education});
+
+   void myprofile (){
+     print(" My name is $name.\n I am $age.\n My Qualification is $education. ");
+   }
+ }
+
+
+ // Question no 8
+ void main(List<String> args) {
+
+Child obj = Child();
+obj.getname("Rockey");
+obj.getweight(5.4);
+obj.getlegs(4);
+print("My pet name is ${obj.setname()}\nHis weight is ${obj.setweight()}KG\nHe has ${obj.setlegs()} legs");
+obj.breath();
+obj.run();
+
+}
+
+class Parent {
+  
+  void breath (){
+    print("He is Breathing");
+  }
+  void run(){
+    print("He is running on his Legs ");
+  }
+
+
+
+}
+
+class Child extends Parent {
+  late String name;
+  late double weight;
+  late int legs;
+
+  void getname(String newname){
+    this.name=newname;
+  }
+  String setname(){
+    return name;
+  }
+
+  void getweight(double newweight){
+    this.weight = newweight;
+  }
+  double setweight(){
+    return weight;
+  }
+
+  void getlegs(int newlegs){
+    this.legs=newlegs;
+  }
+  int setlegs(){
+    return legs;
+  }
+
+}
